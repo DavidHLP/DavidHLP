@@ -1,52 +1,52 @@
-<p align="center">
-  <img src="./assets/archive-header.svg" width="960" alt="DavidHLP — Engineering Archive. Java backend, caching and distributed systems." />
-</p>
+![Engineering Archive — a personal engineering index](assets/archive-header.svg)
 
-<p align="center">
-  <a href="https://davidhlp.github.io/en">ARCHIVE TERMINAL</a> &nbsp; / &nbsp;
-  <a href="https://github.com/DavidHLP?tab=repositories">SOURCE CODE</a> &nbsp; / &nbsp;
-  <a href="#02--field-notes">FIELD NOTES</a>
-</p>
+# DavidHLP
 
-## 00 / Profile
+**Java Backend Developer**
 
-**Java backend developer working on caching and distributed systems.**
+I build Java backend services and reusable components, focusing on cache behavior, asynchronous execution, and service boundaries. My work also spans frontend integration and AI-assisted full-stack development.
 
-I maintain ResiCache and UltiCode. My work focuses on cache consistency, reliable asynchronous execution, and clear service boundaries. I write about the implementation details, trade-offs, and checks behind those systems.
+[Blog](https://davidhlp.github.io/) · [Projects](#01--selected-projects) · [Notes](#03--field-notes) · [简体中文](README.zh-CN.md)
 
-> Correctness, clear boundaries, and reproducible results.
+## 01 / Selected Projects
 
-## 01 / Project index
+### [ResiCache](https://github.com/DavidHLP/ResiCache)
 
-### P–001 &nbsp; [ResiCache](https://github.com/DavidHLP/ResiCache)
+A Spring Cache extension for composing Redis cache protection.
 
-**Composable cache protection for Spring Cache and Redis.**
+- **Composable policies.** An ordered, configurable handler chain separates protection rules from cache operations.
+- **Concurrent loading.** With `sync=true`, same-key callers within one JVM share a loading result; cross-instance coordination requires a distributed-lock backend.
 
-Annotation-driven protection combines null-value caching, TTL jitter, distributed locking, and early refresh through a configurable handler chain. The engineering focus is explicit behavior around expiration, concurrent loading, and safe serialization.
+**Stack:** Java · Spring Cache · Redis · Redisson
 
-<sub>JAVA &nbsp; / &nbsp; SPRING CACHE &nbsp; / &nbsp; REDIS &nbsp; / &nbsp; REDISSON</sub>
+Early-stage; APIs may change. The main branch targets Spring Boot 4 / Java 21; check compatibility before choosing a published release.
+
+[Loading implementation](https://github.com/DavidHLP/ResiCache/blob/main/src/main/java/io/github/davidhlp/spring/cache/redis/cache/SyncSupport.java) · [Compatibility & limitations](https://github.com/DavidHLP/ResiCache/blob/main/COMPATIBILITY.md)
 
 ---
 
-### P–002 &nbsp; [UltiCode](https://github.com/DavidHLP/UltiCode)
+### [UltiCode](https://github.com/DavidHLP/UltiCode)
 
-**An online judge platform with sandboxed code evaluation.**
+An online judge platform for submitting code and evaluating it against test cases.
 
-Problem libraries, contests, and community features backed by application services and independent judge workers. A practical setting for service ownership, recoverable task delivery, and consistent API contracts.
+- **Task delivery.** The outbox path feeds Redis Streams, with retries for dispatch failures and dead-letter handling for malformed jobs.
+- **Execution boundary.** Independent judge workers run submitted code in Docker with network isolation and CPU, memory, and process limits.
 
-<sub>JAVA &nbsp; / &nbsp; SPRING BOOT &nbsp; / &nbsp; REDIS &nbsp; / &nbsp; DOCKER &nbsp; / &nbsp; VUE</sub>
+**Stack:** Java · Spring Boot · Redis · Docker · Vue 3 · TypeScript
 
-## 02 / Field notes
+The Core profile is an opt-in architecture experiment, not the default topology. The project has no production environment.
 
-Selected implementation records. **Article text is in Chinese.**
+[Delivery implementation](https://github.com/DavidHLP/UltiCode/blob/main/services/submission/src/main/java/com/ulticode/modules/queue/outbox/dispatcher/JudgeOutboxDispatcher.java) · [Project status & boundaries (Chinese)](https://github.com/DavidHLP/UltiCode/blob/main/docs/project/current-status.md)
 
-| Record | Subject |
-| :--- | :--- |
-| `N–001` | [Cache stampedes: futures, distributed locks, and double-checking](https://davidhlp.github.io/note/resicache-single-flight) |
-| `N–002` | [Recoverable judge delivery with an outbox and Redis Streams](https://davidhlp.github.io/note/ulticode-outbox-redis-streams) |
+## 02 / Engineering Approach
 
-<p align="right"><a href="https://davidhlp.github.io/en">Explore the archive →</a></p>
+I start from explicit contracts and failure cases, and check changes with focused tests, logs, and reproducible steps. I write and debug code independently, using AI to assist exploration and implementation while reviewing its output myself.
 
----
+## 03 / Field Notes
 
-<sub>DAVIDHLP &nbsp; / &nbsp; ENGINEERING ARCHIVE &nbsp; / &nbsp; PUBLIC INDEX</sub>
+Selected implementation notes. **Both articles are in Chinese; original titles are retained.**
+
+- [缓存击穿时，为什么要同时有 Future、分布式锁和 double-check？](https://davidhlp.github.io/note/resicache-single-flight/) — Request coalescing, lock scope, and failure propagation.
+- [UltiCode Outbox 与 Redis Streams：把判题投递做成可恢复状态](https://davidhlp.github.io/note/ulticode-outbox-redis-streams/) — Durable delivery intent, retries, and recovery boundaries.
+
+[More writing on the blog →](https://davidhlp.github.io/)
