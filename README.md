@@ -1,39 +1,52 @@
-# David
+<p align="center">
+  <img src="./assets/archive-header.svg" width="960" alt="DavidHLP — Engineering Archive. Java backend, caching and distributed systems." />
+</p>
 
-**Java Backend Developer · Caching & Distributed Systems**
+<p align="center">
+  <a href="https://davidhlp.github.io/en">ARCHIVE TERMINAL</a> &nbsp; / &nbsp;
+  <a href="https://github.com/DavidHLP?tab=repositories">SOURCE CODE</a> &nbsp; / &nbsp;
+  <a href="#02--field-notes">FIELD NOTES</a>
+</p>
 
-I build Java backend systems and open-source tools, with a focus on cache consistency, reliable asynchronous execution, and clear service boundaries.
-This is where I share the projects I maintain and the engineering decisions behind them.
+## 00 / Profile
 
-[Writing](https://davidhlp.github.io/) · [Repositories](https://github.com/DavidHLP?tab=repositories)
+**Java backend developer working on caching and distributed systems.**
 
-## Selected projects
+I maintain ResiCache and UltiCode. My work focuses on cache consistency, reliable asynchronous execution, and clear service boundaries. I write about the implementation details, trade-offs, and checks behind those systems.
 
-### [ResiCache](https://github.com/DavidHLP/ResiCache)
+> Correctness, clear boundaries, and reproducible results.
 
-Composable cache protection for Spring Cache and Redis.
+## 01 / Project index
 
-- Combines null-value caching, TTL jitter, distributed locking, and early refresh through annotations and a configurable handler chain.
-- Focuses on explicit, testable behavior around cache expiration, concurrent loading, and safe serialization.
+### P–001 &nbsp; [ResiCache](https://github.com/DavidHLP/ResiCache)
 
-`Java` · `Spring Cache` · `Redis` · `Redisson`
+**Composable cache protection for Spring Cache and Redis.**
 
-### [UltiCode](https://github.com/DavidHLP/UltiCode)
+Annotation-driven protection combines null-value caching, TTL jitter, distributed locking, and early refresh through a configurable handler chain. The engineering focus is explicit behavior around expiration, concurrent loading, and safe serialization.
 
-An online judge platform for programming problems, contests, sandboxed evaluation, and community discussions.
-
-- Separates application services from sandboxed judge workers, with asynchronous submission processing and result delivery.
-- Explores service ownership, failure recovery, and consistent API contracts across backend and frontend applications.
-
-`Java` · `Spring Boot` · `Redis` · `Docker` · `Vue` · `TypeScript`
-
-## Engineering notes
-
-Implementation details, trade-offs, and verification notes. Articles below are in Chinese.
-
-- [Cache stampedes: why combine futures, distributed locks, and double-checking?](https://davidhlp.github.io/note/resicache-single-flight)
-- [Recoverable judge delivery with an outbox and Redis Streams](https://davidhlp.github.io/note/ulticode-outbox-redis-streams)
+<sub>JAVA &nbsp; / &nbsp; SPRING CACHE &nbsp; / &nbsp; REDIS &nbsp; / &nbsp; REDISSON</sub>
 
 ---
 
-<sub>Correctness, clear boundaries, and reproducible results.</sub>
+### P–002 &nbsp; [UltiCode](https://github.com/DavidHLP/UltiCode)
+
+**An online judge platform with sandboxed code evaluation.**
+
+Problem libraries, contests, and community features backed by application services and independent judge workers. A practical setting for service ownership, recoverable task delivery, and consistent API contracts.
+
+<sub>JAVA &nbsp; / &nbsp; SPRING BOOT &nbsp; / &nbsp; REDIS &nbsp; / &nbsp; DOCKER &nbsp; / &nbsp; VUE</sub>
+
+## 02 / Field notes
+
+Selected implementation records. **Article text is in Chinese.**
+
+| Record | Subject |
+| :--- | :--- |
+| `N–001` | [Cache stampedes: futures, distributed locks, and double-checking](https://davidhlp.github.io/note/resicache-single-flight) |
+| `N–002` | [Recoverable judge delivery with an outbox and Redis Streams](https://davidhlp.github.io/note/ulticode-outbox-redis-streams) |
+
+<p align="right"><a href="https://davidhlp.github.io/en">Explore the archive →</a></p>
+
+---
+
+<sub>DAVIDHLP &nbsp; / &nbsp; ENGINEERING ARCHIVE &nbsp; / &nbsp; PUBLIC INDEX</sub>
