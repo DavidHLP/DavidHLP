@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="256" viewBox="0 0 960 256" role="img" aria-labelledby="title desc">
+  <title id="title">DavidHLP — Engineering Archive</title>
+  <desc id="desc">A charcoal archive panel with ivory typography, amber accents, technical registration marks and concentric orbital lines.</desc>
+  <rect width="960" height="256" fill="#131c20"/>
+  <path d="M24 52V24h28M908 24h28v28M24 204v28h28M908 232h28v-28" fill="none" stroke="#647174"/>
+  <path d="M48 65H912M48 199H912" stroke="#344247"/>
+  <g fill="none" stroke="#718080">
+    <circle cx="800" cy="132" r="93" opacity=".2"/>
+    <circle cx="800" cy="132" r="70" stroke-dasharray="275 165" transform="rotate(-55 800 132)"/>
+    <circle cx="800" cy="132" r="45" opacity=".5"/>
+    <path d="M692 132h30m156 0h30M800 24v30m0 156v22" opacity=".5"/>
+    <path d="M779 132h42m-21-21v42" stroke="#c4b18a"/>
+  </g>
+  <circle cx="850" cy="83" r="4" fill="#db9e48"/>
+  <g font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="13" letter-spacing="2" fill="#c4b18a">
+    <text x="48" y="46">PERSONAL ARCHIVE / ENGINEERING</text>
+    <text x="48" y="224">JAVA BACKEND / CACHING / DISTRIBUTED SYSTEMS</text>
+    <text x="864" y="224">01</text>
+  </g>
+  <text x="46" y="135" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700" letter-spacing="1" fill="#e8e6dd">DAVIDHLP</text>
+  <text x="49" y="169" font-family="Arial, Helvetica, sans-serif" font-size="18" letter-spacing="4" fill="#b9c3c2">SYSTEMS. CONTRACTS. EVIDENCE.</text>
+</svg>
